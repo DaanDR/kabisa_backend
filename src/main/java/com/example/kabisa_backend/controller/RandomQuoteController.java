@@ -1,7 +1,7 @@
 package com.example.kabisa_backend.controller;
 
-import com.example.kabisa_backend.client.QuoteClient;
-import com.example.kabisa_backend.model.QuoteResponse;
+import com.example.kabisa_backend.model.responses.Quote;
+import com.example.kabisa_backend.service.QuoteService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,11 +15,11 @@ import reactor.core.publisher.Mono;
 @RequestMapping("/quotes/")
 public class RandomQuoteController {
 
-    private final QuoteClient quoteClient;
+    private final QuoteService quoteService;
 
     @GetMapping("random")
-    public Mono<QuoteResponse> getRandomQuote(){
+    public Mono<Quote> getRandomQuote(){
         log.info("Received request for a random quote");
-        return quoteClient.getRandomQuote();
+        return quoteService.retrieveRandomQuote();
     }
 }

@@ -1,4 +1,4 @@
-package com.example.kabisa_backend.model;
+package com.example.kabisa_backend.model.quoteapi;
 
 import lombok.Data;
 

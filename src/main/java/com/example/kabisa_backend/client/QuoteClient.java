@@ -1,6 +1,6 @@
 package com.example.kabisa_backend.client;
 
-import com.example.kabisa_backend.model.QuoteResponse;
+import com.example.kabisa_backend.model.quoteapi.QuoteResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
