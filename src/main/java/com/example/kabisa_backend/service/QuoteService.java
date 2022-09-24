@@ -9,6 +9,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Mono;
 
+import javax.transaction.Transactional;
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Service
 @Slf4j
 public class QuoteService {
@@ -30,8 +34,15 @@ public class QuoteService {
                 .doOnSuccess(quoteResponse -> log.info("Succesfully retrieved a random quote"));
     }
 
+    @Transactional
+    public List<QuoteResponse> retrieveAllQuotes() {
+        return quoteRepository.findAll().stream()
+                .map(quoteConverter::convertToQuoteResponse)
+                .collect(Collectors.toList());
+    }
+
     private QuoteResponse saveQuote(QuoteResponse quoteResponse) {
-        this.quoteRepository.save(quoteConverter.convertToQuote(quoteResponse));
+        this.quoteRepository.save(quoteConverter.convertToQuoteEntity(quoteResponse));
         log.info("Saved quote in DB");
         return quoteResponse;
     }

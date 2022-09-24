@@ -9,17 +9,26 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Mono;
 
+import java.util.List;
+
 @Slf4j
 @AllArgsConstructor
 @RestController
 @RequestMapping("/quotes/")
-public class RandomQuoteController {
+public class QuoteController {
 
     private final QuoteService quoteService;
+
 
     @GetMapping("random")
     public Mono<QuoteResponse> getRandomQuote(){
         log.info("Received request for a random quote");
         return quoteService.retrieveRandomQuote();
+    }
+
+    @GetMapping("all")
+    public List<QuoteResponse> getAllQuotes(){
+        log.info("Received request for all quotes");
+        return quoteService.retrieveAllQuotes();
     }
 }

@@ -9,11 +9,19 @@ import org.springframework.stereotype.Component;
 @AllArgsConstructor
 public class QuoteConverter {
 
-    public Quote convertToQuote(QuoteResponse quoteResponse) {
+    public Quote convertToQuoteEntity(QuoteResponse quoteResponse) {
         return Quote.builder()
                 .author(quoteResponse.getAuthor())
                 .quote(quoteResponse.getQuote())
                 .permalink(quoteResponse.getPermalink())
                 .build();
+    }
+
+    public QuoteResponse convertToQuoteResponse(Quote quote){
+        return QuoteResponse.builder()
+                .id(String.valueOf(quote.getId()))
+                .author(quote.getAuthor())
+                .quote(quote.getQuote())
+                .permalink(quote.getPermalink()).build();
     }
 }
