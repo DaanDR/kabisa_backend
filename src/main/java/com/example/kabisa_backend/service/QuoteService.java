@@ -2,6 +2,7 @@ package com.example.kabisa_backend.service;
 
 import com.example.kabisa_backend.client.QuoteClient;
 import com.example.kabisa_backend.converter.QuoteConverter;
+import com.example.kabisa_backend.model.entity.Quote;
 import com.example.kabisa_backend.model.quoteapi.QuoteResponse;
 import com.example.kabisa_backend.repository.QuoteRepository;
 import lombok.extern.slf4j.Slf4j;
@@ -11,6 +12,7 @@ import reactor.core.publisher.Mono;
 
 import javax.transaction.Transactional;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -39,6 +41,18 @@ public class QuoteService {
         return quoteRepository.findAll().stream()
                 .map(quoteConverter::convertToQuoteResponse)
                 .collect(Collectors.toList());
+    }
+
+    @Transactional
+    public String likeQuote(int id) {
+       Optional<Quote> quote = quoteRepository.findById(id);
+       if (quote.isPresent()){
+           quote.get().setLikes(quote.get().getLikes() + 1);
+           quoteRepository.save(quote.get());
+           return "Quote succesfully liked";
+       } else {
+           return "No quote found";
+       }
     }
 
     private QuoteResponse saveQuote(QuoteResponse quoteResponse) {

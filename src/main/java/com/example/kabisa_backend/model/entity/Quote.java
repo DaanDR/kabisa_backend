@@ -28,4 +28,7 @@ public class Quote {
 
     @Column
     private String permalink;
+
+    @Column
+    private int likes;
 }

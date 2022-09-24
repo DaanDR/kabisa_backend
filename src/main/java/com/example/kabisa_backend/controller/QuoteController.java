@@ -31,4 +31,10 @@ public class QuoteController {
         log.info("Received request for all quotes");
         return quoteService.retrieveAllQuotes();
     }
+
+    @GetMapping("all")
+    public String likeAQuote(int id){
+        log.info("Received request to like a quote");
+        return quoteService.likeQuote(id);
+    }
 }
