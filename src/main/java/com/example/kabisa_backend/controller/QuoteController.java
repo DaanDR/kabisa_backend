@@ -5,6 +5,7 @@ import com.example.kabisa_backend.service.QuoteService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Mono;
@@ -32,8 +33,8 @@ public class QuoteController {
         return quoteService.retrieveAllQuotes();
     }
 
-    @GetMapping("all")
-    public String likeAQuote(int id){
+    @GetMapping("like/{id}")
+    public String likeAQuote(@PathVariable int id){
         log.info("Received request to like a quote");
         return quoteService.likeQuote(id);
     }

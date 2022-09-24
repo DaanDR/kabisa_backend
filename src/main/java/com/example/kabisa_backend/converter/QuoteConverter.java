@@ -22,6 +22,7 @@ public class QuoteConverter {
                 .id(String.valueOf(quote.getId()))
                 .author(quote.getAuthor())
                 .quote(quote.getQuote())
-                .permalink(quote.getPermalink()).build();
+                .permalink(quote.getPermalink())
+                .likes(String.valueOf(quote.getLikes())).build();
     }
 }

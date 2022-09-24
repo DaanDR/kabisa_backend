@@ -14,4 +14,5 @@ public class QuoteResponse {
     private String author;
     private String quote;
     private String permalink;
+    private String likes;
 }
