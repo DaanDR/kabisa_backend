@@ -1,6 +1,6 @@
 package com.example.kabisa_backend.controller;
 
-import com.example.kabisa_backend.model.responses.Quote;
+import com.example.kabisa_backend.model.quoteapi.QuoteResponse;
 import com.example.kabisa_backend.service.QuoteService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -18,7 +18,7 @@ public class RandomQuoteController {
     private final QuoteService quoteService;
 
     @GetMapping("random")
-    public Mono<Quote> getRandomQuote(){
+    public Mono<QuoteResponse> getRandomQuote(){
         log.info("Received request for a random quote");
         return quoteService.retrieveRandomQuote();
     }

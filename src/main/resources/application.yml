@@ -1,0 +1,17 @@
+quote:
+  url: "http://quotes.stormconsultancy.co.uk"
+
+spring:
+  datasource:
+    url: "jdbc:postgresql://localhost:5432/postgres"
+    username: "postgres"
+    password: "postgres"
+  liquibase:
+    change-log: "classpath:changelogs/db.changelog-master.yaml"
+    default-schema: "public"
+  jpa:
+    database: POSTGRESQL
+    show-sql: false
+    generate-ddl: false
+    hibernate:
+      ddl-auto: none
