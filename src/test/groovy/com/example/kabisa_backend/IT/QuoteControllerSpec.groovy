@@ -12,7 +12,7 @@ class QuoteControllerSpec extends BaseTestSpec {
     QuoteController quoteController
 
     private static final String URL_RANDOM_QUOTE = "/quotes/random"
-    String QUOTE_RESPONSE_RANDOM = this.getClass().getResource('../testdata/randomquote.json').text
+    String QUOTE_RESPONSE_RANDOM = this.getClass().getResource('/resources/testdata/randomquote.json').text
 
     def "When likeAQuote is called, likes for that quote is incremented by one"() {
         given:
