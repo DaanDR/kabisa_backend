@@ -1,0 +1,15 @@
+quote:
+  url: "http://quotes.stormconsultancy.co.uk"
+
+springdoc:
+  swagger-ui:
+    path: /api/api-documentation.html
+    tags-sorter: alpha
+  api-docs:
+    path: /api/api-documentation
+api-version: 'v1.0'
+
+graphql:
+  servlet:
+    mapping: '/graphql'
+    enabled: true

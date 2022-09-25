@@ -1,0 +1,11 @@
+type Quote {
+    id: ID
+    author: String
+    quote: String
+    permalink: String
+    likes: Int
+}
+
+type Query {
+    getAllQuotes: [Quote]
+}

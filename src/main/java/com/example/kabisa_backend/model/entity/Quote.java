@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.experimental.Accessors;
 
 import javax.persistence.*;
 
@@ -13,12 +14,13 @@ import javax.persistence.*;
 @Table
 @AllArgsConstructor
 @NoArgsConstructor
+@Accessors(chain = true)
 public class Quote {
 
     @Id
     @Column
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private Integer id;
 
     @Column
     private String author;
@@ -30,5 +32,5 @@ public class Quote {
     private String permalink;
 
     @Column
-    private int likes;
+    private Integer likes;
 }

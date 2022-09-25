@@ -9,10 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class QuoteResponse {
-    private Integer id;
+public class QuoteRequest {
     private String author;
     private String quote;
-    private String permalink;
-    private Integer likes = 0;
 }
