@@ -2,7 +2,7 @@ Demo for kabisa_backend web api.
 
 How to run locally:
 
-1. clean install
+1. clean package
 2. docker-compose up in root directory
 
 Api consists of REST and graphql endpoints.
