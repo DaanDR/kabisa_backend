@@ -1,13 +1,10 @@
-package com.example.kabisa_backend.utils
+package com.example.kabisa_backend.IT
 
 import com.example.kabisa_backend.KabisaBackendApplication
 import com.example.kabisa_backend.repository.QuoteRepository
 import com.github.tomakehurst.wiremock.WireMockServer
-import com.github.tomakehurst.wiremock.client.ResponseDefinitionBuilder
-import com.github.tomakehurst.wiremock.client.WireMock
 import com.github.tomakehurst.wiremock.core.WireMockConfiguration
 import com.github.tomakehurst.wiremock.http.HttpHeaders
-import com.github.tomakehurst.wiremock.stubbing.StubMapping
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.boot.test.web.client.TestRestTemplate
@@ -17,14 +14,12 @@ import org.springframework.http.ResponseEntity
 import org.springframework.test.context.ActiveProfiles
 import org.springframework.test.context.DynamicPropertyRegistry
 import org.springframework.test.context.DynamicPropertySource
-import org.springframework.util.MultiValueMap
 import org.testcontainers.containers.PostgreSQLContainer
 import org.testcontainers.spock.Testcontainers
 import spock.lang.Shared
 import spock.lang.Specification
 
 import static com.github.tomakehurst.wiremock.client.WireMock.*
-
 
 @SpringBootTest(classes = KabisaBackendApplication, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @Testcontainers
@@ -76,8 +71,8 @@ abstract class BaseTestSpec extends Specification {
         template.exchange(url, HttpMethod.GET, new HttpEntity<Object>(headers), responseType)
     }
 
-    protected <T> ResponseEntity<T> postForEntityWithBody(String url, String body) {
-        HttpHeaders headers = new HttpHeaders()
-        template.postForEntity(url, new HttpEntity<>(body, headers), String.class) as ResponseEntity<T>
-    }
+//    protected <T> ResponseEntity<T> postForEntityWithBody(String url, String body) {
+//        HttpHeaders headers = new HttpHeaders()
+//        template.postForEntity(url, new HttpEntity<>(body, headers), String.class) as ResponseEntity<T>
+//    }
 }
