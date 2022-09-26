@@ -2,6 +2,7 @@ package com.example.kabisa_backend.integrationtests
 
 import com.example.kabisa_backend.KabisaBackendApplication
 import com.example.kabisa_backend.controller.QuoteController
+import com.example.kabisa_backend.exception.QuoteNotFoundException
 import com.example.kabisa_backend.model.entity.Quote
 import com.example.kabisa_backend.model.quoteapi.QuoteResponse
 import lombok.extern.slf4j.Slf4j
@@ -37,6 +38,18 @@ class QuoteControllerSpec extends BaseTestSpec {
 
         List<Quote> quoteList = quoteRepository.findAll()
         quoteList.size() == 1
+    }
+
+    def "When a random quote dendpoint is called, a random quote is returned and saved."() {
+        given: "stub for the quote service is setup"
+        createStubNotFound("/random.json")
+
+        when: "Random quote endpoint is called"
+        ResponseEntity response = getForEntity(URL_RANDOM_QUOTE, String)
+
+        then: "Response is as expected"
+        response.getBody() != null
+        response.getBody() == "Quote not found"
     }
 
     def "When likeAQuote is called with an ID greater than 1000 a bad request is returned with informative string"() {

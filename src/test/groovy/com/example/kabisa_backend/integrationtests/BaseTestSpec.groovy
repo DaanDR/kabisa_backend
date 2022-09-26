@@ -64,6 +64,13 @@ abstract class BaseTestSpec extends Specification {
                         .withBody(resourceBody)))
     }
 
+    void createStubNotFound(String urlMatch) {
+        stubFor(get(urlEqualTo(urlMatch))
+                .willReturn(aResponse()
+                        .withStatus(404)
+                        .withHeader("Content-Type", "application/json")))
+    }
+
     protected <T> ResponseEntity<T> getForEntity(String url, Class<T> responseType) {
         HttpHeaders headers = new HttpHeaders()
         template.exchange(url, HttpMethod.GET, new HttpEntity<Object>(headers), responseType)
