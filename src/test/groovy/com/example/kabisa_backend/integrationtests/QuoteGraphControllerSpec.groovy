@@ -1,13 +1,11 @@
-package com.example.kabisa_backend
-//package com.example.kabisa_backend
+//package com.example.kabisa_backend.integrationtests
 //
 //
 //import com.example.kabisa_backend.controller.QuoteGraphController
 //import com.example.kabisa_backend.model.entity.Quote
-//import com.example.kabisa_backend.IT.BaseTestSpec
 //import org.springframework.beans.factory.annotation.Autowired
 //
-//class com.example.kabisa_backend.IT.QuoteGraphControllerSpec extends BaseTestSpec {
+//class QuoteGraphControllerSpec extends BaseTestSpec {
 //
 //    @Autowired
 //    QuoteGraphController quoteGraphController
@@ -20,11 +18,11 @@ package com.example.kabisa_backend
 //            "    }\n" +
 //            "}"
 //
-////    def "When likeAQuote is called, likes for that quote is incremented by one"() {
-////        when:
-////        List<Quote> quoteResponse = postForEntityWithBody(URL_RANDOM_QUOTE, QUERY).body
-////
-////        then:
-////        quoteResponse != null
-////    }
+//    def "When likeAQuote is called, likes for that quote is incremented by one"() {
+//        when:
+//        List<Quote> quoteResponse = postForEntityWithBody(URL_RANDOM_QUOTE, QUERY).body
+//
+//        then:
+//        quoteResponse != null
+//    }
 //}

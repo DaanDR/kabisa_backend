@@ -20,7 +20,7 @@
         <graph-spring.version>14.0.0</graph-spring.version>
         <graph-java.version>13.0.1</graph-java.version>
         <spring-swagger.version>1.6.11</spring-swagger.version>
-        <liquibase-version>4.8.0</liquibase-version>
+        <liquibase-version>4.16.1</liquibase-version>
 
         <spock-spring.version>2.2-groovy-4.0</spock-spring.version>
         <testcontainers.version>1.17.3</testcontainers.version>

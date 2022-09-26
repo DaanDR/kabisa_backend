@@ -1,4 +1,4 @@
-package com.example.kabisa_backend
+package com.example.kabisa_backend.integrationtests
 
 
 import com.example.kabisa_backend.repository.QuoteRepository
