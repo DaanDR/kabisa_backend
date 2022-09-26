@@ -6,7 +6,7 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.7.4</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <relativePath/>
     </parent>
     <groupId>com.example</groupId>
     <artifactId>kabisa_backend</artifactId>
@@ -17,6 +17,14 @@
         <java.version>17</java.version>
         <spring-cloud.version>2021.0.4</spring-cloud.version>
         <spring.version>2.7.4</spring.version>
+        <graph-spring.version>14.0.0</graph-spring.version>
+        <graph-java.version>13.0.1</graph-java.version>
+        <spring-swagger.version>1.6.11</spring-swagger.version>
+        <liquibase-version>4.8.0</liquibase-version>
+
+        <spock-spring.version>2.2-groovy-4.0</spock-spring.version>
+        <testcontainers.version>1.17.3</testcontainers.version>
+        <wiremock.version>2.27.2</wiremock.version>
     </properties>
     <dependencies>
         <dependency>
@@ -32,17 +40,17 @@
         <dependency>
             <groupId>com.graphql-java-kickstart</groupId>
             <artifactId>graphql-spring-boot-starter</artifactId>
-            <version>14.0.0</version>
+            <version>${graph-spring.version}</version>
         </dependency>
         <dependency>
             <groupId>com.graphql-java-kickstart</groupId>
             <artifactId>graphql-java-tools</artifactId>
-            <version>13.0.1</version>
+            <version>${graph-java.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springdoc</groupId>
             <artifactId>springdoc-openapi-webflux-ui</artifactId>
-            <version>1.6.11</version>
+            <version>${spring-swagger.version}</version>
         </dependency>
         <dependency>
             <groupId>org.postgresql</groupId>
@@ -51,7 +59,7 @@
         <dependency>
             <groupId>org.liquibase</groupId>
             <artifactId>liquibase-core</artifactId>
-            <version>4.8.0</version>
+            <version>${liquibase-version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -82,25 +90,25 @@
         <dependency>
             <groupId>org.spockframework</groupId>
             <artifactId>spock-spring</artifactId>
-            <version>2.2-groovy-4.0</version>
+            <version>${spock-spring.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.testcontainers</groupId>
             <artifactId>postgresql</artifactId>
-            <version>1.17.3</version>
+            <version>${testcontainers.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.testcontainers</groupId>
             <artifactId>spock</artifactId>
-            <version>1.17.3</version>
+            <version>${testcontainers.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>com.github.tomakehurst</groupId>
             <artifactId>wiremock-standalone</artifactId>
-            <version>2.27.2</version>
+            <version>${wiremock.version}</version>
             <scope>test</scope>
         </dependency>
 

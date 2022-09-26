@@ -7,6 +7,7 @@ Demo project for kabisa coding assignment.
 ### Frameworks/tools used
 
 * Java 17
+* Maven
 * Postgres
 * Spring boot 
 * Webflux

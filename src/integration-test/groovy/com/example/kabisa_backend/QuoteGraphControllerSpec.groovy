@@ -1,4 +1,4 @@
-package com.example.kabisa_backend.IT
+package com.example.kabisa_backend
 //package com.example.kabisa_backend
 //
 //

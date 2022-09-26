@@ -1,0 +1,25 @@
+quote:
+  url: "http://localhost:8080/"
+
+springdoc:
+  swagger-ui:
+    path: /api/api-documentation.html
+    tags-sorter: alpha
+  api-docs:
+    path: /api/api-documentation
+api-version: 'v1.0'
+
+logging:
+  level:
+    org.springframework.web: INFO
+
+spring:
+  datasource:
+    url: "jdbc:postgresql://localhost:5432/integration-tests-db"
+    username: "test"
+    password: "test"
+
+graphql:
+  servlet:
+    mapping: '/graphql'
+    enabled: true

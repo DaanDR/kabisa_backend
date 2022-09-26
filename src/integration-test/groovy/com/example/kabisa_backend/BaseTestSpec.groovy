@@ -1,12 +1,11 @@
-package com.example.kabisa_backend.IT
+package com.example.kabisa_backend
 
-import com.example.kabisa_backend.KabisaBackendApplication
+
 import com.example.kabisa_backend.repository.QuoteRepository
 import com.github.tomakehurst.wiremock.WireMockServer
 import com.github.tomakehurst.wiremock.core.WireMockConfiguration
 import com.github.tomakehurst.wiremock.http.HttpHeaders
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.boot.test.web.client.TestRestTemplate
 import org.springframework.http.HttpEntity
 import org.springframework.http.HttpMethod
@@ -21,9 +20,8 @@ import spock.lang.Specification
 
 import static com.github.tomakehurst.wiremock.client.WireMock.*
 
-@SpringBootTest(classes = KabisaBackendApplication, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @Testcontainers
-@ActiveProfiles("integration")
+@ActiveProfiles("integration-test")
 abstract class BaseTestSpec extends Specification {
 
     @Shared
