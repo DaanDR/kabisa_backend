@@ -19,6 +19,6 @@ public class QuoteControllerAdvice {
     }
     @ExceptionHandler(QuoteNotFoundException.class)
     public final ResponseEntity<String> handleConstraintViolationException(QuoteNotFoundException ex){
-        return ResponseEntity.badRequest().body(ex.getMessage());
+        return ResponseEntity.status(404).body(ex.getMessage());
     }
 }

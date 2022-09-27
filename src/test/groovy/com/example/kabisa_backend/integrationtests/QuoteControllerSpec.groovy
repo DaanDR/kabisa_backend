@@ -50,6 +50,7 @@ class QuoteControllerSpec extends BaseTestSpec {
         then: "Response is as expected"
         response.getBody() != null
         response.getBody() == "Quote not found"
+        response.getStatusCodeValue() == 404
     }
 
     def "When likeAQuote is called with an ID greater than 1000 a bad request is returned with informative string"() {
