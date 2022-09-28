@@ -56,3 +56,7 @@ query{
 ### Sidenote: 
 DB is empty on initialization, user first has to retrieve a random quote using the endpoint. \
 Every time a random quote is retrieved, it is saved in the DB.
+
+### Known issues: 
+For some reason graphql controller keeps showing up in swagger ui. Using @Hidden does not seem to work. Seems te be a known issue :
+https://stackoverflow.com/questions/71509914/how-to-disable-dgs-graphql-framework-controllers-in-swagger
