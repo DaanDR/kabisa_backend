@@ -2,7 +2,6 @@ package com.example.kabisa_backend.integrationtests
 
 import com.example.kabisa_backend.KabisaBackendApplication
 import com.example.kabisa_backend.controller.QuoteController
-import com.example.kabisa_backend.exception.QuoteNotFoundException
 import com.example.kabisa_backend.model.entity.Quote
 import com.example.kabisa_backend.model.quoteapi.QuoteResponse
 import lombok.extern.slf4j.Slf4j
@@ -22,7 +21,7 @@ class QuoteControllerSpec extends BaseTestSpec {
     QuoteController quoteController
 
     private static final String URL_RANDOM_QUOTE = "/quotes/random"
-    private static final String URL_LIKE_QUOTE = "/quotes/like/1001"
+    private static final String URL_LIKE_QUOTE = "/quotes/like?id=1001"
     String QUOTE_RESPONSE_RANDOM = this.getClass().getResource('/testdata/randomquote.json').text
 
     def "When a random quote endpoint is called, a random quote is returned and saved."() {

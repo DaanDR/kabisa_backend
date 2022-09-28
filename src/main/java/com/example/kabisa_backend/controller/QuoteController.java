@@ -38,9 +38,9 @@ public class QuoteController {
         return quoteService.retrieveAllQuotes();
     }
 
-    @GetMapping("like/{id}")
+    @GetMapping("like")
     @Operation(tags = "3. Like a random quote", summary = "Like a quote")
-    public String likeAQuote(@PathVariable @ValidId Integer id){
+    public String likeAQuote(@RequestParam @ValidId Integer id){
         log.info("Received request to like a quote");
         return quoteService.likeQuote(id);
     }
